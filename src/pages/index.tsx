@@ -1,7 +1,21 @@
-import { ArrowDownRight, Globe, LogIn } from "lucide-react";
+import {
+  ArrowDownRight,
+  ArrowRight,
+  Briefcase,
+  Compass,
+  Globe,
+  Handshake,
+  Instagram,
+  Linkedin,
+  LogIn,
+  ShieldCheck,
+  Zap,
+} from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
 
 export default function Home() {
   return (
@@ -25,7 +39,7 @@ export default function Home() {
             Sign In
           </Button>
         </header>
-        <div className="mt-2 flex flex-col items-center">
+        <div className="mt-2 flex flex-col items-center text-center">
           <Image
             src="/logo/imvestor.png"
             alt="Imvestor"
@@ -53,156 +67,246 @@ export default function Home() {
               height={240}
             />
           </div>
-          <h1 className="mt-12 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-6xl font-medium tracking-wide text-transparent">
+          <h1 className="mt-24 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-6xl font-medium tracking-wide text-transparent">
             Why choose{" "}
             <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text">
               Im-vestor?
             </span>
           </h1>
-          <div>
-            <div className="p-6 mt-8">
-              <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4">
-                <div className="rounded-2xl bg-gray-800/50 p-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/10">
-                      <svg
-                        className="h-5 w-5 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h2 className="text-xl font-semibold text-yellow-500">
-                      Navigate your journey with Confidence
-                    </h2>
-                    <p className="text-sm text-gray-300">
-                      Whether you&apos;re a seasoned investor or a first-time
-                      entrepreneur, Im-Vestor provides resources to guide you
-                      through each stage of your business or investment journey.
-                    </p>
-                  </div>
+          <div className="mt-8 p-6">
+            <div className="mx-auto mb-6 grid max-w-4xl grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4">
+              <div className="md:col-span-2 col-span-1 rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 backdrop-blur-md">
+                <div className="flex flex-col">
+                  <Compass className="h-8 w-8 text-[#E5CD82] mx-auto md:mx-0" />
+                  <h2 className="mt-4 text-xl font-semibold text-[#E5CD82]">
+                    Navigate your journey with Confidence
+                  </h2>
+                  <p className="mt-2 text-gray-300">
+                    Whether you&apos;re a seasoned investor or a first-time
+                    entrepreneur, Im-Vestor provides resources to guide you
+                    through each stage of your business or investment journey.
+                  </p>
                 </div>
-
-                <div className="rounded-2xl bg-gray-800/50 p-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/10">
-                      <svg
-                        className="h-5 w-5 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h2 className="text-xl font-semibold text-yellow-500">
-                      Smart Matching
-                    </h2>
-                    <p className="text-sm text-gray-300">
-                      Our AI-powered algorithm ensures you find the most
-                      relevant connections for your goals.
-                    </p>
-                  </div>
+              </div>
+              <div className="col-span-1 rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 backdrop-blur-md">
+                <div className="flex flex-col">
+                  <Handshake className="h-8 w-8 text-[#E5CD82] mx-auto md:mx-0" />
+                  <h2 className="mt-4 text-xl font-semibold text-[#E5CD82]">
+                    Smart Matching
+                  </h2>
+                  <p className="mt-2 text-gray-300">
+                    Our AI-powered algorithm ensures you find the most relevant
+                    connections for your goals.
+                  </p>
                 </div>
+              </div>
 
-                <div className="rounded-2xl bg-gray-800/50 p-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/10">
-                      <svg
-                        className="h-5 w-5 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h2 className="text-xl font-semibold text-yellow-500">
-                      Seamless Negotiations
-                    </h2>
-                    <p className="text-sm text-gray-300">
-                      Investors and entrepreneurs can communicate directly
-                      through the platform, schedule meetings, and negotiate
-                      terms openly. Both parties stay informed, building trust
-                      and collaboration.
-                    </p>
-                  </div>
+              <div className="md:row-span-2 row-span-1 rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 backdrop-blur-md">
+                <div className="flex flex-col">
+                  <Briefcase className="h-8 w-8 text-[#E5CD82] mx-auto md:mx-0" />
+                  <h2 className="mt-4 text-xl font-semibold text-[#E5CD82]">
+                    Seamless Negotiations
+                  </h2>
+                  <p className="mt-2 text-gray-300">
+                    Investors and entrepreneurs can communicate directly through
+                    the platform, schedule meetings, and negotiate terms openly.
+                    Both parties stay informed, building trust and
+                    collaboration.
+                  </p>
                 </div>
+              </div>
 
-                <div className="rounded-2xl bg-gray-800/50 p-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/10">
-                      <svg
-                        className="h-5 w-5 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h2 className="text-xl font-semibold text-yellow-500">
-                      Poke and Boost
-                    </h2>
-                    <p className="text-sm text-gray-300">
-                      Guarantee special addons in order to help your grow your
-                      profile.
-                    </p>
-                  </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image
+                  src={"/images/home-diamond.svg"}
+                  alt="Imvestor"
+                  width={180}
+                  height={180}
+                />
+              </div>
+
+              <div className="rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 backdrop-blur-md">
+                <div className="flex flex-col">
+                  <Zap className="h-8 w-8 text-[#E5CD82] mx-auto md:mx-0" />
+                  <h2 className="mt-4 text-xl font-semibold text-[#E5CD82]">
+                    Poke and Boost
+                  </h2>
+                  <p className="mt-2 text-gray-300">
+                    Guarantee special addons in order to help your grow your
+                    profile.
+                  </p>
                 </div>
+              </div>
 
-                <div className="col-span-2 rounded-2xl bg-gray-800/50 p-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/10">
-                      <svg
-                        className="h-5 w-5 text-yellow-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h2 className="text-xl font-semibold text-yellow-500">
-                      Your Investments, Protected
-                    </h2>
-                    <p className="text-sm text-gray-300">
-                      Im-Vestor prioritizes the safety of all users. We ensure
-                      all projects and investors are thoroughly vetted, creating
-                      a trusted environment for business to thrive.
-                    </p>
-                  </div>
+              <div className="md:col-span-2 col-span-1 rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 backdrop-blur-md">
+                <div className="flex flex-col">
+                  <ShieldCheck className="h-8 w-8 text-[#E5CD82] mx-auto md:mx-0" />
+                  <h2 className="mt-4 text-xl font-semibold text-[#E5CD82]">
+                    Your Investments, Protected
+                  </h2>
+                  <p className="mt-2 text-gray-300">
+                    Im-Vestor prioritizes the safety of all users. We ensure all
+                    projects and investors are thoroughly vetted, creating a
+                    trusted environment for business to thrive.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+          <h1 className="mt-24 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-6xl font-medium tracking-wide text-transparent mx-4 md:mx-0">
+            Be part of the new Business{" "}
+            <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text">
+              Revolution
+            </span>
+          </h1>
+          <h3 className="mt-4 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-2xl font-medium tracking-wide text-transparent">
+            <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text">
+              Select your path
+            </span>{" "}
+            and start your journey today!
+          </h3>
+          <div className="mt-8 flex md:flex-row flex-col max-w-4xl justify-center gap-4 p-6">
+            <div className="flex flex-col items-center rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 px-6 py-32 backdrop-blur-md">
+              <Image
+                src={"/images/astronaut.png"}
+                alt="Imvestor"
+                width={64}
+                height={180}
+              />
+              <h2 className="mt-4 bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-xl font-semibold text-transparent">
+                ENTREPRENEUR
+              </h2>
+              <p className="mt-2 text-center text-gray-300">
+                Invest in your business and grow your company with the help of
+                our AI-powered matching algorithm.
+              </p>
+            </div>
+            <div className="flex flex-col items-center rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 px-6 py-32 backdrop-blur-md">
+              <Image
+                src={"/images/rocket.png"}
+                alt="Imvestor"
+                width={82}
+                height={180}
+                className="mt-6"
+              />
+              <h2 className="mt-4 bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-xl font-semibold text-transparent">
+                INVESTOR
+              </h2>
+              <p className="mt-2 text-center text-gray-300">
+                Invest in your business and grow your company with the help of
+                our AI-powered matching algorithm.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-32 flex md:flex-row flex-col w-full max-w-4xl justify-center gap-24 p-6">
+            <div className="md:w-1/2 w-full">
+              <h3 className="bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-4xl font-medium tracking-wide text-transparent">
+                <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-transparent">
+                  Join
+                </span>{" "}
+                us Now
+              </h3>
+              <p className="mt-8 max-w-96 text-2xl tracking-wide text-gray-300">
+                Receive{" "}
+                <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-transparent">
+                  exclusive updates
+                </span>{" "}
+                and be notified first-hand when Vestor is launched, and receive
+                a{" "}
+                <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-transparent">
+                  special gift
+                </span>{" "}
+                for being among the first 🎁.
+              </p>
+            </div>
+            <div className="md:w-1/2 w-full">
+              <div className="flex flex-col items-center justify-center rounded-2xl border-[1px] border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 text-center backdrop-blur-md">
+                <Image
+                  src={"/images/home-diamond.svg"}
+                  alt="Imvestor"
+                  width={32}
+                  height={180}
+                />
+                <h3 className="mt-4 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-2xl font-medium tracking-wide text-transparent">
+                  Take your special{" "}
+                  <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-transparent">
+                    gift!
+                  </span>
+                </h3>
+                <p className="mt-2 text-xs text-gray-300">
+                  Don&apos;t have an account?{" "}
+                  <Link
+                    href="/signup"
+                    className="text-[#F0D687] underline hover:opacity-70"
+                  >
+                    Create one
+                  </Link>
+                </p>
+                <Input
+                  className="mt-8"
+                  placeholder="Enter your email"
+                  type="email"
+                />
+                <Input
+                  className="mt-4"
+                  placeholder="Password"
+                  type="password"
+                />
+                <div className="mt-4 flex w-full items-center justify-between">
+                  <Link
+                    href="/reset-password"
+                    className="text-xs underline hover:opacity-70"
+                  >
+                    Forgot your password?
+                  </Link>
+                  <Button>
+                    Login <ArrowRight />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer className="mx-auto w-full max-w-7xl px-12 mt-32">
+            <hr className="h-0.5 w-full bg-neutral-100 opacity-10" />
+            <div className="my-auto flex h-32 w-full items-center gap-6 text-gray-500">
+              <p>Follow us</p>
+              <Link href={"#"} className="hover:opacity-70">
+                <Linkedin className="ml-2 h-6 w-6" />
+              </Link>
+              <Link href={"#"} className="hover:opacity-70">
+                <Instagram className="h-6 w-6" />
+              </Link>
+              <p>@Im-Vestor</p>
+              <Link
+                href={"mailto:media@Im-Vestor.com"}
+                className="hover:opacity-70"
+              >
+                <p>media@Im-Vestor.com</p>
+              </Link>
+            </div>
+            <hr className="h-0.5 w-full bg-neutral-100 opacity-10" />
+            <div className="my-auto flex h-32 w-full items-center gap-6 text-gray-500">
+              <Link href={"#"} className="hover:opacity-70">
+                <p>Terms & Conditions</p>
+              </Link>
+              <p>© 2024 Im-Vestor. All rights reserved.</p>
+            </div>
+            <p className="mt-4 text-center text-gray-700 text-xs">
+              The material presented via this website is for informational
+              purposes only. Nothing in this website constitutes a solicitation
+              for the purchase or sale of any financial product or service.
+              Material presented on this website does not constitute a public
+              offering of securities or investment management services in any
+              jurisdiction. Investing in startup and early stage companies
+              involves risks, including loss of capital, illiquidity, lack of
+              dividends and dilution, and it should be done only as part of a
+              diversified portfolio. The Investments presented in this website
+              are suitable only for investors who are sufficiently sophisticated
+              to understand these risks and make their own investment decisions.
+            </p>
+          </footer>
         </div>
       </main>
     </>
