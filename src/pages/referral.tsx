@@ -34,12 +34,10 @@ export default function Home() {
           >
             <Globe className="h-6 w-6" />
           </Button>
-          <Link href="/login">
-            <Button variant="outline" className="border-2 border-white/10">
-              <LogIn className="h-6 w-6" />
-              Sign In
-            </Button>
-            </Link>
+          <Button variant="outline" className="border-2 border-white/10">
+            <LogIn className="h-6 w-6" />
+            Sign In
+          </Button>
         </header>
         <div className="mt-2 flex flex-col items-center text-center">
           <Image

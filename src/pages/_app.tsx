@@ -1,5 +1,6 @@
 import { type AppType } from "next/app";
 import { Roboto } from "next/font/google";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "~/styles/globals.css";
 
@@ -9,11 +10,15 @@ const roboto = Roboto({
   display: "swap",
 });
 
+const queryClient = new QueryClient()
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className={roboto.className}>
-      <Component {...pageProps} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={roboto.className}>
+        <Component {...pageProps} />
+      </div>
+    </QueryClientProvider>
   );
 };
 
