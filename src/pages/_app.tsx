@@ -3,6 +3,8 @@ import { Roboto } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "~/styles/globals.css";
+import { SessionProvider } from "next-auth/react";
+import Head from "next/head";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -10,15 +12,22 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className={roboto.className}>
-        <Component {...pageProps} />
-      </div>
-    </QueryClientProvider>
+    <SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <Head>
+          <title>Imvestor | Sign Up</title>
+          <meta name="description" content="Imvestor" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className={roboto.className}>
+          <Component {...pageProps} />
+        </div>
+      </QueryClientProvider>
+    </SessionProvider>
   );
 };
 

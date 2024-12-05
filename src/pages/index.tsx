@@ -11,20 +11,15 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import router from "next/router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Imvestor</title>
-        <meta name="description" content="Imvestor" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className="mb-64 min-h-screen">
         <header className="m-6 flex justify-end gap-2">
           <Button
@@ -39,7 +34,7 @@ export default function Home() {
               <LogIn className="h-6 w-6" />
               Sign In
             </Button>
-            </Link>
+          </Link>
         </header>
         <div className="mt-2 flex flex-col items-center text-center">
           <Image
@@ -55,7 +50,9 @@ export default function Home() {
           <h1 className="mt-4 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-2xl font-medium text-transparent">
             Connecting entrepreneurs and investors
           </h1>
-          <Button className="mt-8 rounded-full hover:opacity-75">
+          <Button 
+          onClick={async () =>  await router.push("/signup")}
+          className="mt-8 rounded-full hover:opacity-75">
             Get Started <ArrowDownRight />
           </Button>
           <hr className="mt-20 h-0.5 w-full max-w-4xl rounded-full bg-neutral-100 opacity-20" />
@@ -76,7 +73,7 @@ export default function Home() {
             </span>
           </h1>
           <div className="mt-8 p-6">
-            <div className="mx-auto mb-6 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-3">
+            <div className="mx-auto mb-6 grid max-w-4xl grid-cols-1 gap-4 text-center md:grid-cols-3 md:grid-rows-3 md:text-start">
               <div className="col-span-1 rounded-2xl border-2 border-white/10 bg-[#2D2F3D] bg-opacity-30 p-6 backdrop-blur-md md:col-span-2">
                 <div className="flex flex-col">
                   <Compass className="mx-auto h-8 w-8 text-[#E5CD82] md:mx-0" />
@@ -157,11 +154,12 @@ export default function Home() {
           </div>
 
           <div className="relative w-full">
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
             <Image
               src="/images/bg-stars.png"
               alt="Stars Background"
               fill
-              className="-z-10 object-cover opacity-50"
+              className="-z-20 object-cover opacity-50"
             />
             <h1 className="mx-4 mt-48 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-6xl font-medium tracking-wide text-transparent md:mx-0">
               Be part of the new Business{" "}

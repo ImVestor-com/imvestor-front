@@ -1,6 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Eye } from "lucide-react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -52,11 +51,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Imvestor | Login</title>
-        <meta name="description" content="Imvestor" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className="flex min-h-screen">
         {/* Left side - Image */}
         <div className="hidden lg:block lg:w-1/2">

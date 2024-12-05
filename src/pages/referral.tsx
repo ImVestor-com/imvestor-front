@@ -11,20 +11,23 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import Head from "next/head";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 
 export default function Home() {
+  const session = useSession();
+  const router = useRouter();
+
+  if (session.status === "unauthenticated") {
+    void router.push("/login");
+  }
+
   return (
     <>
-      <Head>
-        <title>Imvestor</title>
-        <meta name="description" content="Imvestor" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className="mb-64 min-h-screen">
         <header className="m-6 flex justify-end gap-2">
           <Button
