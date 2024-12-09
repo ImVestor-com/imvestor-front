@@ -44,20 +44,6 @@ export default function SignUpGroup() {
             value={data.email}
             onChange={(e) => setData({ ...data, email: e.target.value })}
           />
-
-          <PhoneInput
-            className="mt-4"
-            placeholder="Phone Number"
-            value={data.phone}
-            onChange={(e) => setData({ ...data, phone: e.target.value })}
-          />
-
-          <Button
-            disabled={data.password !== data.confirmPassword}
-            className="mt-10 w-full"
-          >
-            Next <ArrowRight />
-          </Button>
         </div>
       </main>
     </>
