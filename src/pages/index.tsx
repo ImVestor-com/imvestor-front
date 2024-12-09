@@ -159,7 +159,7 @@ export default function Home() {
               src="/images/bg-stars.png"
               alt="Stars Background"
               fill
-              className="-z-20 object-cover opacity-50"
+              className="-z-20 object-cover opacity-20"
             />
             <h1 className="mx-4 mt-48 bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-6xl font-medium tracking-wide text-transparent md:mx-0">
               Be part of the new Business{" "}
@@ -210,7 +210,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-48 flex w-full max-w-4xl flex-col justify-center gap-24 p-6 md:flex-row">
+          <div className="mt-48 flex w-full max-w-4xl flex-col justify-center gap-24 p-6 md:flex-row text-center md:text-start">
             <div className="w-full md:w-1/2">
               <h3 className="bg-gradient-to-r from-[#BFBFC2] via-[#FDFDFD] to-[#BFBFC2] bg-clip-text text-4xl font-medium tracking-wide text-transparent">
                 <span className="bg-gradient-to-r from-[#E5CD82] via-[#C2AE72] to-[#978760] bg-clip-text text-transparent">
